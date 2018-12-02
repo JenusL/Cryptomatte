@@ -1056,7 +1056,7 @@ def _glob_wildcard_names(wildcard_str):
     """
     match_set = set()
     for manf in g_cryptomatte_manf_from_names.keys():
-        if fnmatch.fnmatch(manf, wildcard_str):
+        if fnmatch.fnmatchcase(manf, wildcard_str):
             manf = manf.encode("utf-8") if type(manf) is unicode else str(manf)
             match_set.add(manf)
     return match_set
